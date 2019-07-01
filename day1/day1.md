@@ -76,3 +76,56 @@ app.json 是当前小程序的全局配置，包括了小程序的所有页面�
 - tabBar字段 —— 底部导航栏
 
 [详情请看app.json配置文档](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)
+
+# WXML 模板
+
+WXML其实类似HTML，它其实是对原生标签的封装，结合微信这个程序，去封装底层的功能，比如摄像头，录音，拍照，地图，全部封装为标签，自定义组件
+
+> WXML == 类HTML == 自定义标签 == 组件
+
+- 单向数据绑定
+- 拥有指令
+
+## 表达式
+
+双大括号
+```js
+<view> {{message}} </view>
+```
+
+## wx:for
+
+## wx:if
+
+## template
+
+类似组件的写法
+```html
+<template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+</template>
+
+<template is="staffName" data="{{firstName: 'Hulk', lastName: 'Hu'}}"></template>
+<template is="staffName" data="{{firstName: 'Hulk', lastName: 'Hu'}}"></template>
+<template is="staffName" data="{{firstName: 'Hulk', lastName: 'Hu'}}"></template>
+<template is="staffName" data="{{firstName: 'qweqwe', lastName: 'Hu'}}"></template>
+```
+
+# 组件
+
+新建一个文件夹components/test/test 在test空目录下右键新建Component，它会自动生成四个文件
+
+在page/mine/mine.json引入组件
+```js
+{
+  "usingComponents": {
+    "text-component": "/components/test/test"
+  }
+}
+```
+在page/mine/mine.wxml使用标签
+```js
+<text-component></text-component>
+```

@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -14,14 +15,14 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#FFFFFF",
-    "selectedColor": "#000",
+    "selectedColor": "#FFFFFF",
     "backgroundColor": "#58bc58",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "./imgs/icons/index.png",
-        "selectedIconPath": "./imgs/icons/index-select.png"
+        "iconPath": "./imgs/icons/home.png",
+        "selectedIconPath": "./imgs/icons/home-select.png"
       },
       {
         "pagePath": "pages/logs/logs",

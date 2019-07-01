@@ -1,13 +1,49 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!-- view -->
+<!-- <view class="message"> {{message}} </view>
+<view wx:for="{{news}}">标题：{{item.title}} 作者：{{item.author}}</view>
+<view wx:if="{{!bool}}">显示或者隐藏</view>
+
+<template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>
+</template>
+
+<template is="staffName" data="{{firstName: 'Hulk', lastName: 'Hu'}}"></template>
+<template is="staffName" data="{{firstName: 'Hulk', lastName: 'Hu'}}"></template>
+<template is="staffName" data="{{firstName: 'Hulk', lastName: 'Hu'}}"></template>
+<template is="staffName" data="{{firstName: 'qweqwe', lastName: 'Hu'}}"></template>
+
+<i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    <view slot="content">内容不错</view>
+    <view slot="footer">尾部内容</view>
+</i-card>
+<i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    <view slot="content">内容不错</view>
+    <view slot="footer">尾部内容</view>
+</i-card>
+<i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    <view slot="content">内容不错</view>
+    <view slot="footer">尾部内容</view>
+</i-card>
+<i-cell-group>
+    <i-cell title="只显示箭头" is-link></i-cell>
+    <i-cell title="跳转到首页" is-link url="/pages/dashboard/index"></i-cell>
+    <i-cell title="只有 footer 点击有效" is-link url="/pages/dashboard/index" only-tap-footer></i-cell>
+    <i-cell title="开关">
+        <switch slot="footer" checked />
+    </i-cell>
+</i-cell-group> -->
+
+<van-card wx:for="{{news}}"
+  num="2"
+  price="2.00"
+  desc="描述信息"
+  title="商品标题"
+  thumb="{{ 'https://hbimg.huabanimg.com/65c980591e3b2cadc116b80fe92034a6ea7f9648d7923-oMDAki_fw658' }}"
+/>
+
+<audio poster="http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000" name="此时此刻" author="许巍" src="http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46" id="myAudio" controls loop></audio>
+
+<view>{{message}}</view>
+<button bindtap='changeValue'>改变值</button>

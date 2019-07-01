@@ -1,3 +1,5 @@
+const store = require('../../utils/store.js')
+console.log(store)
 Page({
   data: {
     imgUrls: [
@@ -29,5 +31,12 @@ Page({
     this.setData({
       duration: e.detail.value
     })
+  },
+   onLoad: function (options) {
+     console.log(store.getState())
+    //  store.dispatch({
+    //    type:'GETNAME'
+    //  })
   }
+
 })
