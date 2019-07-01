@@ -1,0 +1,2 @@
+/* components/wsearch/wsearch.wxss */
+@import '../../weui-wxss/dist/style/weui.wxss';

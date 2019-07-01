@@ -1,33 +1,100 @@
 Page({
+  // model
+  /**
+   * 页面的初始数据
+   */
   data: {
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
-    indicatorDots: false,
-    autoplay: false,
-    interval: 5000,
-    duration: 1000
+    message: 'hi',
+    news: [],
+    page: 1,
+    tab: 'share'
   },
-  changeIndicatorDots: function (e) {
+  changeValue() {
     this.setData({
-      indicatorDots: !this.data.indicatorDots
+      message: 'Yao'
     })
   },
-  changeAutoplay: function (e) {
+  loadMore({ type }) {
+    var self = this
+    console.log(wx)
+    wx.request({
+      data: {
+        limit: 10,
+        page: this.data.page,
+        tab: this.data.tab
+      },
+      url: 'https://cnodejs.org/api/v1/topics',
+      success(res) {
+        wx.stopPullDownRefresh();
+        console.log(res.data)
+        self.setData({
+          news: type === 'onReachBottom' ? [...self.data.news, ...res.data.data] : [...res.data.data, ...self.data.news]
+        })
+      }
+    })
     this.setData({
-      autoplay: !this.data.autoplay
+      page: ++this.data.page
     })
   },
-  intervalChange: function (e) {
-    this.setData({
-      interval: e.detail.value
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.loadMore({
+      type: 'onReachBottom'
     })
   },
-  durationChange: function (e) {
-    this.setData({
-      duration: e.detail.value
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    this.loadMore({
+      type: 'onPullDownRefresh'
     })
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    this.loadMore({
+      type: 'onReachBottom'
+    })
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })
