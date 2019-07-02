@@ -1,4 +1,10 @@
 {
-  "navigationBarTitleText": "查看启动日志",
-  "usingComponents": {}
+  "usingComponents": {
+    "i-card": "/iview-weapp/dist/card/index",
+    "i-cell-group": "/iview-weapp/dist/cell-group/index",
+    "i-cell": "/iview-weapp/dist/cell/index",
+    "van-card": "/vant-weapp/dist/card/index",
+    "wsearch": "/components/wsearch/wsearch",
+    "wcard": "/components/wcard/wcard"
+  }
 }

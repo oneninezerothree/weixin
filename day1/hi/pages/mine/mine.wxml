@@ -1,4 +1,7 @@
-<map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+<!-- <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map> -->
 <!-- 
 <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera> -->
-<live-player src="rtmp://ws.upstream.huya.com/huyalive/1416856366-1416856366-6708633895278088727-3308250134-10057-A-1561975675-1" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="width: 300px; height: 225px;" />
+<!-- <live-player src="rtmp://ws.upstream.huya.com/huyalive/1416856366-1416856366-6708633895278088727-3308250134-10057-A-1561975675-1" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="width: 300px; height: 225px;" /> -->
+
+<!-- <web-view src="http://localhost:8080/"></web-view> -->
+<button bindtap='toDetailPage'>跳转页面</button>

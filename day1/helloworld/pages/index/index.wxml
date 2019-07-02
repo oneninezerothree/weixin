@@ -34,16 +34,20 @@
         <switch slot="footer" checked />
     </i-cell>
 </i-cell-group> -->
+<!-- <navigator wx:for="{{news}}" url="/pages/detail/detail" hover-class="navigator-hover">
+  <van-card
+    num="{{item.reply_count}}"
+    price="{{item.tab}}"
+    desc="{{item.author.loginname}}"
+    title="{{item.title}}"
+    thumb="{{ item.author.avatar_url }}"
+  />
+</navigator> -->
 
-<van-card wx:for="{{news}}"
-  num="2"
-  price="2.00"
-  desc="描述信息"
-  title="商品标题"
-  thumb="{{ 'https://hbimg.huabanimg.com/65c980591e3b2cadc116b80fe92034a6ea7f9648d7923-oMDAki_fw658' }}"
-/>
+<!-- <audio poster="http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000" name="此时此刻" author="许巍" src="http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46" id="myAudio" controls loop></audio> -->
 
-<audio poster="http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000" name="此时此刻" author="许巍" src="http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46" id="myAudio" controls loop></audio>
-
-<view>{{message}}</view>
+<!-- <view>{{message}}</view>
 <button bindtap='changeValue'>改变值</button>
+<wsearch></wsearch> -->
+
+<wcard news="{{news}}"></wcard>

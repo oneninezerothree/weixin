@@ -37,6 +37,42 @@ Page({
     //  store.dispatch({
     //    type:'GETNAME'
     //  })
+  },
+  navigateDetail(){
+    // wx.navigateTo({
+    //   url: '../detail/detail'
+    // })
+    // wx.showActionSheet({
+    //   itemList: ['A', 'B', 'C'],
+    //   success(res) {
+    //     console.log(res.tapIndex)
+    //   },
+    //   fail(res) {
+    //     console.log(res.errMsg)
+    //   }
+    // })
+    // wx.getLocation({
+    //   type: 'wgs84',
+    //   success(res) {
+    //     console.log(res)
+    //     const latitude = res.latitude
+    //     const longitude = res.longitude
+    //     const speed = res.speed
+    //     const accuracy = res.accuracy
+    //   }
+    // })
+    wx.makePhoneCall({
+      phoneNumber: '13929559054'
+    })
+    // wx.showNavigationBarLoading();
+    // wx.setNavigationBarTitle({
+    //   title: '老姚'
+    // });
+    // wx.showLoading()
+    // wx.showToast({
+    //   title: '成功',
+    //   icon: 'success',
+    //   duration: 2000
+    // })
   }
-
 })

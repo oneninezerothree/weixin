@@ -17,6 +17,13 @@ Page({
   loadMore({ type }) {
     var self = this
     console.log(wx)
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.showNavigationBarLoading()
+    wx.setNavigationBarTitle({
+      title: '加载中...'
+    })
     wx.request({
       data: {
         limit: 10,
@@ -25,7 +32,12 @@ Page({
       },
       url: 'https://cnodejs.org/api/v1/topics',
       success(res) {
+        wx.hideLoading()
+        wx.hideNavigationBarLoading()
         wx.stopPullDownRefresh();
+        wx.setNavigationBarTitle({
+          title: 'QQ音乐'
+        })
         console.log(res.data)
         self.setData({
           news: type === 'onReachBottom' ? [...self.data.news, ...res.data.data] : [...res.data.data, ...self.data.news]

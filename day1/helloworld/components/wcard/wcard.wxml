@@ -1,0 +1,9 @@
+<navigator wx:for="{{news}}" url="/pages/detail/detail?id={{item.id}}" hover-class="navigator-hover">
+  <van-card
+    num="{{item.reply_count}}"
+    price="{{item.tab}}"
+    desc="{{item.author.loginname}}"
+    title="{{item.title}}"
+    thumb="{{ item.author.avatar_url }}"
+  />
+</navigator>

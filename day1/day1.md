@@ -129,3 +129,30 @@ WXML其实类似HTML，它其实是对原生标签的封装，结合微信这个
 ```js
 <text-component></text-component>
 ```
+
+# API
+
+编程式导航
+```js
+wx.navigateTo({
+  url: 'test?id=1'
+})
+```
+
+请求
+```js
+wx.request()
+```
+
+弹窗
+```js
+wx.showActionSheet({
+  itemList: ['A', 'B', 'C'],
+  success (res) {
+    console.log(res.tapIndex)
+  },
+  fail (res) {
+    console.log(res.errMsg)
+  }
+})
+```

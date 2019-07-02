@@ -7,6 +7,69 @@ Page({
   data: {
 
   },
+  toDetailPage(){
+    // wx.navigateTo({
+    //   url: '../detail/detail?id=1'
+    // })
+    // wx.showToast({
+    //   title: '成功',
+    //   icon: 'success',
+    //   duration: 2000
+    // })
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '这是一个模态弹窗',
+    //   success(res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击确定')
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
+    // wx.showLoading({
+    //   title: '加载中',
+    // })
+    // wx.showActionSheet({
+    //   itemList: ['A', 'B', 'C'],
+    //   success(res) {
+    //     console.log(res.tapIndex)
+    //   },
+    //   fail(res) {
+    //     console.log(res.errMsg)
+    //   }
+    // })
+    // wx.showNavigationBarLoading()
+    // wx.setNavigationBarTitle({
+    //   title: '当前页面'
+    // })
+    // wx.hideTabBar()
+    // wx.getLocation({
+    //   type: 'wgs84',
+    //   success(res) {
+    //     console.log(res)
+    //     const latitude = res.latitude
+    //     const longitude = res.longitude
+    //     const speed = res.speed
+    //     const accuracy = res.accuracy
+    //   }
+    // })
+    // wx.makePhoneCall({
+    //   phoneNumber: '13929559054'
+    // })
+    wx.startRecord({
+      success(res) {
+        const tempFilePath = res.tempFilePath
+        wx.playVoice({
+          filePath: tempFilePath,
+          complete() { }
+        })
+      }
+    })
+    setTimeout(function () {
+      wx.stopRecord() // 结束录音
+    }, 10000)
+  },
 
   /**
    * 生命周期函数--监听页面加载
