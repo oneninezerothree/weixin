@@ -1,0 +1,25 @@
+<template name="Component-name">
+    <div>
+        <!-- JSX -->
+        <p>{this.state.name}</p>
+        <button onClick={
+            ()=>{
+                this.setState({
+                    name: 'Jing'
+                })
+            }
+        }>Ok</button>
+    </div>
+</template>
+<script>
+// JS
+export default class {
+    state = {
+        name: 'yao'
+    }
+}
+</script>
+<style lang="scss">
+/* CSS */
+p {color: #58bc58};
+</style>

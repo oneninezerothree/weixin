@@ -1,0 +1,29 @@
+<template name="Test">
+    <div>
+        <!-- JSX -->
+        <p onClick={this.testClick.bind(this)}>{this.state.title}</p>
+    </div>
+</template>
+<script>
+// JS
+// ajsljdjalksjd
+export default class {
+    state = {
+        title: 'hello world123'
+    }
+    componentDidMount(){
+        console.log('生命周期')
+    }
+    testClick(){
+        this.setState({
+            title: 'Yao'
+        })
+    }
+}
+// asldjalkdjalkdjaldjl
+</script>
+<style lang="scss">
+/* CSS */
+$color: red;
+p {color: $color};
+</style>
