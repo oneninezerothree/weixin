@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <video autoplay id="video">Video stream not available.</video>
+    <button id="start">开始</button>
+    <button id="stop">停止</button>
+    <a id="download">下载</a>
+    <script>
+        var video = document.querySelector('#video')
+        var start = document.querySelector('#start')
+        var stop = document.querySelector('#stop')
+        var download = document.querySelector('#download')
+        navigator.mediaDevices.getDisplayMedia({
+            video: {
+                width: 1920,
+                height: 1080
+            },
+            audio: true
+        }).then(function (stream) {
+            let recordedBlobs = [];
+            // 用MediaRecorder来接受对象
+            var mediaRecorder = new MediaRecorder(stream, {
+                mimeType: "video/webm;codecs=vp9"
+            });
+            console.log(mediaRecorder)
+            start.onclick = () => {
+                mediaRecorder.start(10)
+            }
+            stop.onclick = function () {
+                mediaRecorder.stop();
+            }
+            mediaRecorder.ondataavailable = function (e) {
+                if (event.data && event.data.size > 0) {
+                    // 把二进制数据存进数组
+                    recordedBlobs.push(event.data);
+                }
+                console.log(e)
+                // chunks.push(e.data);
+            }
+
+            mediaRecorder.onstop = function (e) {
+                var blob = new Blob(recordedBlobs, {
+                    'type': 'video/webm'
+                });
+                chunks = [];
+                var videoUrl = URL.createObjectURL(blob);
+                download.href = videoUrl;
+                download.download = "test.webm";
+                console.log("recorder stopped");
+            }
+            video.srcObject = stream
+            // console.log(stream)
+            // var mediaRecorder = new MediaRecorder(stream);
+            // record.onclick = function () {
+            //     mediaRecorder.start();
+            //     console.log(mediaRecorder.state);
+            // }
+        }).catch(function (err) {
+            console.log('The following error occurred: ' + err);
+        })
+        console.log(navigator)
+    </script>
+</body>
+
+</html>
